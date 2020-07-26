@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/color"
+    android:background="#FFC107"
+    tools:context=".presentation.intro.">
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_alignParentBottom="true"
+        app:tabIndicator="@drawable/tab_indicator_selected"
+        app:tabBackground="@drawable/tab_indicator_default"
+        android:layout_centerHorizontal="true"
+        app:tabIndicatorColor="#64D314"
+
+        android:layout_marginBottom="40dp"
+        app:tabGravity="center" />
+
+    <Button
+
+        android:onClick="skip"
+        android:id="@+id/btn_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFEB3B"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:text="skip" />
+
+
+    <Button
+        android:onClick="next"
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="next"
+        android:background="#9E1515"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="485dp"
+
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/begiiner" />
+
+
+
+
+
+</RelativeLayout>
