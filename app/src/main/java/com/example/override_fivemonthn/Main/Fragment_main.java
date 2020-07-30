@@ -1,11 +1,13 @@
 package com.example.override_fivemonthn.Main;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -55,7 +57,8 @@ public class Fragment_main extends Fragment {
     String keyHeart;
     LottieAnimationView lottie;
     TextView textFree, textPartic, textAccess;
-
+    Button btnLgtMode;
+    Button btnDarkMode;
 
     public static Fragment newInstance() {
         return new Fragment_main();
@@ -84,7 +87,7 @@ public class Fragment_main extends Fragment {
         person2 = view.findViewById(R.id.percon2);
         person3 = view.findViewById(R.id.percon3);
         person4 = view.findViewById(R.id.percon4);
-        update = view.findViewById(R.id.update);
+
         textPrice = view.findViewById(R.id.textPrice);
         exploreThe = view.findViewById(R.id.explore_the);
         textCategory = view.findViewById(R.id.textViewCategory);
@@ -96,6 +99,10 @@ public class Fragment_main extends Fragment {
         textFree = view.findViewById(R.id.free);
         textPartic = view.findViewById(R.id.partic);
         textAccess = view.findViewById(R.id.access);
+
+      //  btnLgtMode=view.findViewById(R.id.LightMode);
+    //    btnDarkMode=view.findViewById(R.id.DarkMode);
+
 
 
         RangeSlider slider = view.findViewById(R.id.rangeSlider1);
@@ -111,6 +118,29 @@ public class Fragment_main extends Fragment {
         addHeart();
 
 
+       /*      btnLgtMode.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View v) {
+
+                  }
+              });
+
+   btnDarkMode.setOnClickListener(new View.OnClickListener() {
+       @Override
+       public void onClick(View v) {
+
+           AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+           startActivity(new Intent(getContext(),Fragment_main.class));
+
+
+       }
+   });*/
+
+
+
+
+
+
         toNextTo.setOnClickListener(new View.OnClickListener() {
 
 
@@ -124,6 +154,9 @@ public class Fragment_main extends Fragment {
 
 
     }
+
+
+
 
 
     private void addHeart() {
@@ -190,7 +223,10 @@ public class Fragment_main extends Fragment {
     }
 
 
-    public void Participants(BoredAction a) {
+
+
+
+    public void Participants(String max) {
 
         Random random = new Random();
         int r = random.nextInt(+3);
@@ -236,6 +272,9 @@ public class Fragment_main extends Fragment {
     }
 
 
+
+
+
     public interface OnSelectedButtonListener {
 
         void onButtonSelected(int buttonIndex);
@@ -269,7 +308,7 @@ public class Fragment_main extends Fragment {
 
                         progressBar.setProgress((int) (boredAction.getAccessibility() * 90), true);
 
-                        Participants(boredAction);
+                        Participants(boredAction.toString());
 
 
                         BoredAction boredAction3 = App.boredStorage.boredAction(keyHeart);

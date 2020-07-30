@@ -5,9 +5,11 @@ package com.example.override_fivemonthn.Main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -74,7 +76,22 @@ public class MainActivity extends AppCompatActivity  {
             });
         }
 
-        public class MainPagerAdapter extends FragmentPagerAdapter {
+    public void DarkMode(View view) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        finish();
+
+
+        }
+
+    public void LightMode(View view) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        finish();
+
+    }
+
+    public class MainPagerAdapter extends FragmentPagerAdapter {
 
             public MainPagerAdapter(@NonNull FragmentManager fm, int behavior) {
                 super(fm, behavior);

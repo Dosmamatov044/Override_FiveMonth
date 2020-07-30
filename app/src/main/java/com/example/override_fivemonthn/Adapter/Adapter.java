@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import com.example.override_fivemonthn.R;
 import com.example.override_fivemonthn.model.BoredAction;
 import com.like.LikeButton;
@@ -31,6 +32,8 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
 
 
     public Image_Interface onItemClick;
+
+
 
     public Adapter(List<BoredAction> list) {
         this.list = list;
@@ -60,6 +63,8 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
         this.onItemClick = onItemClick;
     }
 
+
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView textViewCategory, explore_the, free, textPrice, Participants;
@@ -69,7 +74,7 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
         ProgressBar progressBar;
         LikeButton likeButton;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView)  {
             super(itemView);
 
             textViewCategory = itemView.findViewById(R.id.textViewCategory);
@@ -104,20 +109,18 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
             progressBar.setProgress((int) (boredAction.getAccessibility() * 90), true);
             explore_the.setText(boredAction.getActivity());
             textViewCategory.setText(boredAction.getType());
-            Participants(boredAction);
 
         }
-        public void Participants(BoredAction boredAction) {
+
+
+
+        }
 
 
 
 
+        }
 
-
-            }
-
-
-        } }
 
 
 

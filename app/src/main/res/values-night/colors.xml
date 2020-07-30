@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#040404</color>
+    <color name="colorAccent">#000000</color>
+
+    <color name="one">#000000</color>
+    <color name="two">#554A4A</color>
+    <color name="three">#000000</color>
+    <color name="four">#4E4343</color>
+    <color name="five">#0C0C0C</color>
+    <color name="six">#000000</color>
+    <color name="seven">#221D1C</color>
+
+    <color name="eight">#020202</color>
+    <color name="nine">#000000</color>
+    <color name="ten">#1E2122</color>
+
+    <color name="colorBackground">#4A4141</color>
+
+    <color name="textColor">#000000</color>
+    <color name="CardsWhite1">#2C2929</color>
+    <color name="CardsWhite2">#3C3636</color>
+
+    <color name="white">#837B7B</color>
+    <color name="green">#000000</color>
+
+
+
+    <color name="circle1">#404249</color>
+
+
+
+</resources>

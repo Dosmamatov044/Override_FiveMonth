@@ -17,15 +17,18 @@
 
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="todo1" translatable="false">TODO</string>
+    <string name="todo2" translatable="false">TODO</string>
+    <string name="todo3" translatable="false">TODO</string>
+    <string name="todo4" translatable="false">TODO</string>
+    <string name="participants" translatable="false">Participants</string>
 
 
-
-        <array name="initial_slider_values">
+    <array name="initial_slider_values">
             <item>1.0</item>
             <item>5.0</item>
         </array>
-
 
 
 

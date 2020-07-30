@@ -14,6 +14,16 @@
 
     <color name="eight">#673AB7</color>
     <color name="nine">#650C06</color>
+     <color name="ten">#03A9F4</color>
+    <color name="white">#FFFBFB</color>
+     <color name="green">#8BC34A</color>
+    <color name="colorBackground">#ffffff</color>
+
+    <color name="textColor">#000000</color>
+    <color name="CardsWhite1">#FFFFFF</color>
+    <color name="CardsWhite2">#F3E7EE</color>
+
+    <color name="circle1">#3F51B5</color>
 
 
 

@@ -121,9 +121,10 @@
             android:background="@drawable/circle"
             android:scrollX="-5dp"
             android:src="@drawable/ic_group_black_24dp"
-            android:visibility="visible"
+
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo1" />
 
 
         <ImageView
@@ -139,7 +140,8 @@
             android:src="@drawable/person"
 
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo2" />
 
         <ImageView
             android:id="@+id/percon3"
@@ -152,14 +154,15 @@
             android:src="@drawable/groupv"
 
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo3" />
 
 
         <ImageView
             android:id="@+id/percon4"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="203dp"
+            android:layout_marginStart="203dp"
             android:layout_marginTop="188dp"
 
             android:background="@drawable/circle"
@@ -167,7 +170,8 @@
 
             app:layout_constraintLeft_toLeftOf="parent"
 
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo4" />
 
 
         <TextView
@@ -175,10 +179,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="106dp"
             android:layout_marginTop="220dp"
-            android:text="Participants"
+            android:text="@string/participants"
                android:id="@+id/Participants"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
 
 
         <ProgressBar

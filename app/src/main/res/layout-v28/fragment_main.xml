@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="#000000"
+    android:background="@color/two"
     android:visibility="visible"
     tools:context=".Main.Fragment_main"
     tools:visibility="visible">
@@ -32,8 +32,8 @@
         />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="25dp"
         android:layout_marginLeft="285dp"
         android:layout_marginTop="13dp"
         android:src="@drawable/wifi" />
@@ -55,7 +55,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:text="9:41"
-        android:textColor="#FFFBFB"
+        android:textColor="@color/white"
         android:textStyle="bold"
 
         />
@@ -74,7 +74,7 @@
             android:id="@+id/textViewCategory"
 
 
-            android:background="#03A9F4"
+            android:background="@color/ten"
             android:layout_width="70dp"
             android:layout_height="23dp"
             android:layout_marginTop="16dp"
@@ -295,7 +295,7 @@ android:id="@+id/lottieHi"
         android:layout_marginTop="405dp"
         android:text="Category"
        android:id="@+id/category"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textStyle="italic"
 
         />
@@ -326,7 +326,7 @@ android:id="@+id/lottieHi"
         android:text="Price"
 
        android:id="@+id/price"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
 
 
         />
@@ -349,7 +349,7 @@ android:id="@+id/lottieHi"
 
         android:valueTo="100.0"
 
-        app:thumbColor="#506994" />
+        app:thumbColor="@color/eight" />
 
     <TextView
         android:layout_width="100dp"
@@ -357,7 +357,7 @@ android:id="@+id/lottieHi"
         android:layout_marginLeft="194dp"
         android:layout_marginTop="510dp"
         android:text="Accessibility"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
              android:id="@+id/accessibity"
 
         />
@@ -391,26 +391,12 @@ android:id="@+id/lottieHi"
         android:outlineAmbientShadowColor="@color/material_on_background_emphasis_medium"
         android:valueTo="100.0"
          app:values="@array/initial_slider_values"
-        app:thumbColor="#FF9800"
+        app:thumbColor="@color/four"
 
        />
 
 
-    <Button
-        android:layout_width="90dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="520dp"
-        android:layout_marginLeft="80dp"
-        android:id="@+id/update"
-        android:background="#C69A16"
-        android:text="update"
-        android:textAlignment="center"
-        android:textSize="10dp"
-        android:textColor="#000000"
-        android:textAllCaps="false"
-        android:paddingTop="2dp"
 
-        />
 
 
 

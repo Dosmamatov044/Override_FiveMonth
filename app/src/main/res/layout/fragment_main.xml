@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="#000000"
+    android:background="@color/two"
     android:visibility="visible"
     tools:context=".Main.Fragment_main"
     tools:visibility="visible">
@@ -396,21 +396,8 @@ android:id="@+id/lottieHi"
        />
 
 
-    <Button
-        android:layout_width="90dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="520dp"
-        android:layout_marginLeft="80dp"
-        android:id="@+id/update"
-        android:background="#C69A16"
-        android:text="update"
-        android:textAlignment="center"
-        android:textSize="10dp"
-        android:textColor="#000000"
-        android:textAllCaps="false"
-        android:paddingTop="2dp"
 
-        />
+
 
 
 

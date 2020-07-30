@@ -3,9 +3,9 @@
     android:shape="oval" >
 
     <gradient
-        android:centerColor="#3F51B5"
-        android:endColor="#3F51B5"
-        android:startColor="#3F51B5"
+        android:centerColor="@color/circle1"
+        android:endColor="@color/circle1"
+        android:startColor="@color/circle1"
         android:type="sweep" />
 
     <size
