@@ -38,10 +38,14 @@ import com.like.OnLikeListener;
 
 
 import java.text.MessageFormat;
+import java.util.Objects;
 import java.util.Random;
 
 
 public class Fragment_main extends Fragment {
+
+    private static final String FIRST = "save1";
+    private static final String SECOND = "save2";
 
     Spinner spinner;
     TextView textCategory;
@@ -57,8 +61,6 @@ public class Fragment_main extends Fragment {
     String keyHeart;
     LottieAnimationView lottie;
     TextView textFree, textPartic, textAccess;
-    Button btnLgtMode;
-    Button btnDarkMode;
 
     public static Fragment newInstance() {
         return new Fragment_main();
@@ -100,9 +102,8 @@ public class Fragment_main extends Fragment {
         textPartic = view.findViewById(R.id.partic);
         textAccess = view.findViewById(R.id.access);
 
-      //  btnLgtMode=view.findViewById(R.id.LightMode);
-    //    btnDarkMode=view.findViewById(R.id.DarkMode);
-
+        //  btnLgtMode=view.findViewById(R.id.LightMode);
+        //    btnDarkMode=view.findViewById(R.id.DarkMode);
 
 
         RangeSlider slider = view.findViewById(R.id.rangeSlider1);
@@ -137,10 +138,6 @@ public class Fragment_main extends Fragment {
    });*/
 
 
-
-
-
-
         toNextTo.setOnClickListener(new View.OnClickListener() {
 
 
@@ -154,9 +151,6 @@ public class Fragment_main extends Fragment {
 
 
     }
-
-
-
 
 
     private void addHeart() {
@@ -223,53 +217,75 @@ public class Fragment_main extends Fragment {
     }
 
 
+    public  interface  OnSendClick {
+        void onsSendPhoto();
 
 
 
-    public void Participants(String max) {
-
-        Random random = new Random();
-        int r = random.nextInt(+3);
-
-        switch (r) {
-
-            case 0:
-                person1.setVisibility(View.INVISIBLE);
-                person2.setVisibility(View.VISIBLE);
-                person3.setVisibility(View.INVISIBLE);
-                person4.setVisibility(View.VISIBLE);
+    }
 
 
-                break;
 
+
+
+
+
+
+    public void Participants(BoredAction boredAction) {
+
+
+
+        int a =1;
+        int b=2;
+        int c=3;
+        int d=4;
+
+        Random random=new Random();
+        int r=random.nextInt(boredAction.getParticipants()+a+b+c+d);
+
+
+        switch (r){
             case 1:
-                person1.setVisibility(View.VISIBLE);
+                person1.setVisibility(View.INVISIBLE);
                 person2.setVisibility(View.VISIBLE);
                 person3.setVisibility(View.VISIBLE);
                 person4.setVisibility(View.VISIBLE);
 
-                break;
+
+                break;case 2:
+                person1.setVisibility(View.VISIBLE);
+                person2.setVisibility(View.INVISIBLE);
+                person3.setVisibility(View.VISIBLE);
+                person4.setVisibility(View.INVISIBLE);
 
 
-            case 2:
+                break;case 3:
                 person1.setVisibility(View.VISIBLE);
                 person2.setVisibility(View.INVISIBLE);
                 person3.setVisibility(View.VISIBLE);
                 person4.setVisibility(View.VISIBLE);
 
 
+                break;case 4:
+                person1.setVisibility(View.VISIBLE);
+                person2.setVisibility(View.VISIBLE);
+                person3.setVisibility(View.VISIBLE);
+                person4.setVisibility(View.INVISIBLE);
+
+
                 break;
-            case 3:
-                person1.setVisibility(View.INVISIBLE);
-                person2.setVisibility(View.INVISIBLE);
-                person3.setVisibility(View.INVISIBLE);
-                person4.setVisibility(View.VISIBLE);
-                break;
+
+
+
+
+
 
         }
 
 
-    }
+
+        }
+
 
 
 
@@ -283,6 +299,8 @@ public class Fragment_main extends Fragment {
 
 
     public void nextClick() {
+
+
 
 
         animateShow();
@@ -308,7 +326,7 @@ public class Fragment_main extends Fragment {
 
                         progressBar.setProgress((int) (boredAction.getAccessibility() * 90), true);
 
-                        Participants(boredAction.toString());
+                        Participants(boredAction);
 
 
                         BoredAction boredAction3 = App.boredStorage.boredAction(keyHeart);
@@ -416,6 +434,20 @@ public class Fragment_main extends Fragment {
 
 
     }
+
+
+  /*  public void Spinner1()  {
+        valueOfSpinner = spinner.getSelectedItem().toString().trim();
+
+        switch ()
+
+    }*/
+
+
+
+
+
+
 
 
 

@@ -2,7 +2,9 @@
 
     <string-array name="types">
 
-    
+
+
+
        <item>education</item>
         <item>social</item>
        <item>music</item>
@@ -23,6 +25,7 @@
     <string name="todo3" translatable="false">TODO</string>
     <string name="todo4" translatable="false">TODO</string>
     <string name="participants" translatable="false">Participants</string>
+    <string name="text1" >LightMode</string>
 
 
     <array name="initial_slider_values">

@@ -74,7 +74,7 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
         ProgressBar progressBar;
         LikeButton likeButton;
 
-        public ViewHolder(@NonNull View itemView)  {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             textViewCategory = itemView.findViewById(R.id.textViewCategory);
@@ -85,9 +85,9 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
 
             progressBar = itemView.findViewById(R.id.progress_bar);
             person1 = itemView.findViewById(R.id.percon1);
-            person1 = itemView.findViewById(R.id.percon2);
-            person1 = itemView.findViewById(R.id.percon3);
-            person1 = itemView.findViewById(R.id.percon4);
+          person2 = itemView.findViewById(R.id.percon2);
+         person3 = itemView.findViewById(R.id.percon3);
+           person4 = itemView.findViewById(R.id.percon4);
 
             likeButton = itemView.findViewById(R.id.buttonHeartlist);
             likeButton.setOnClickListener(new View.OnClickListener() {
@@ -110,16 +110,88 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
             explore_the.setText(boredAction.getActivity());
             textViewCategory.setText(boredAction.getType());
 
+Participants(boredAction);
         }
 
 
-
-        }
-
+        public void Participants(BoredAction boredAction) {
 
 
 
-        }
+    int a =1;
+    int b=2;
+    int c=3;
+    int d=4;
+
+    Random random=new Random();
+    int r=random.nextInt(boredAction.getParticipants()+a+b+c+d);
+
+
+    switch (r){
+        case 1:
+            person1.setVisibility(View.INVISIBLE);
+            person2.setVisibility(View.VISIBLE);
+            person3.setVisibility(View.VISIBLE);
+            person4.setVisibility(View.VISIBLE);
+
+
+            break;case 2:
+            person1.setVisibility(View.VISIBLE);
+            person2.setVisibility(View.INVISIBLE);
+            person3.setVisibility(View.VISIBLE);
+            person4.setVisibility(View.INVISIBLE);
+
+
+            break;case 3:
+            person1.setVisibility(View.VISIBLE);
+            person2.setVisibility(View.INVISIBLE);
+            person3.setVisibility(View.VISIBLE);
+            person4.setVisibility(View.VISIBLE);
+
+
+            break;case 4:
+            person1.setVisibility(View.VISIBLE);
+            person2.setVisibility(View.VISIBLE);
+            person3.setVisibility(View.VISIBLE);
+            person4.setVisibility(View.INVISIBLE);
+
+
+            break;
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+     /*       if (boredAction.getParticipants() != null) {
+                if (boredAction.getParticipants() == 1) {
+                    person1.setImageResource(R.drawable.groupv);
+            person2.setImageResource(R.drawable.group2);
+
+                } else if (boredAction.getParticipants() == 2) {
+                    person1.setImageResource(R.drawable.personplace);
+                } else if (boredAction.getParticipants() >= 3) {
+                    person1.setImageResource(R.drawable.groupv);
+                }
+            }
+
+
+      */ }
+    }}
+
+
+
+
+
 
 
 
