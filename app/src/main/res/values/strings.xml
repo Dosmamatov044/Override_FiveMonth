@@ -26,6 +26,7 @@
     <string name="todo4" translatable="false">TODO</string>
     <string name="participants" translatable="false">Participants</string>
     <string name="text1" >LightMode</string>
+    <string name="price">Price</string>
 
 
     <array name="initial_slider_values">

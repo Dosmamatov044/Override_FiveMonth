@@ -1,6 +1,8 @@
 package com.example.override_fivemonthn.Main;
 
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -25,6 +27,7 @@ import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.override_fivemonthn.App;
+import com.example.override_fivemonthn.BatteryReceiver;
 import com.example.override_fivemonthn.BoredApiClient;
 import com.example.override_fivemonthn.R;
 
@@ -47,6 +50,7 @@ public class Fragment_main extends Fragment {
     private static final String FIRST = "save1";
     private static final String SECOND = "save2";
 
+
     Spinner spinner;
     TextView textCategory;
     String valueOfSpinner;
@@ -61,6 +65,8 @@ public class Fragment_main extends Fragment {
     String keyHeart;
     LottieAnimationView lottie;
     TextView textFree, textPartic, textAccess;
+    private String QLink;
+    Button link;
 
     public static Fragment newInstance() {
         return new Fragment_main();
@@ -80,6 +86,10 @@ public class Fragment_main extends Fragment {
         return inflater.inflate(R.layout.fragment_main, container, false);
 
     }
+
+
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -101,7 +111,7 @@ public class Fragment_main extends Fragment {
         textFree = view.findViewById(R.id.free);
         textPartic = view.findViewById(R.id.partic);
         textAccess = view.findViewById(R.id.access);
-
+         link=view.findViewById(R.id.Link);
         //  btnLgtMode=view.findViewById(R.id.LightMode);
         //    btnDarkMode=view.findViewById(R.id.DarkMode);
 
@@ -117,6 +127,13 @@ public class Fragment_main extends Fragment {
         spinner();
 
         addHeart();
+
+
+        link.setOnClickListener((View v13) -> {
+            Link();
+        });
+
+
 
 
        /*      btnLgtMode.setOnClickListener(new View.OnClickListener() {
@@ -217,8 +234,50 @@ public class Fragment_main extends Fragment {
     }
 
 
-    public  interface  OnSendClick {
-        void onsSendPhoto();
+
+
+
+    private void Participants(BoredAction boredAction) {
+
+
+
+
+Random random=new Random();
+int r=random.nextInt(boredAction.getParticipants()+1+2+3+4)+2;
+
+        if (boredAction.getParticipants() != null) {
+
+    switch (r){
+        case 1:
+            person1.setVisibility(View.INVISIBLE);
+            person2.setVisibility(View.INVISIBLE);
+            person3.setVisibility(View.VISIBLE);
+            person4.setVisibility(View.INVISIBLE);
+            break;
+            case 2:
+                person1.setVisibility(View.INVISIBLE);
+                person2.setVisibility(View.INVISIBLE);
+                person3.setVisibility(View.VISIBLE);
+                person4.setVisibility(View.INVISIBLE);
+
+            break;
+            case 3:
+                person1.setVisibility(View.INVISIBLE);
+                person2.setVisibility(View.INVISIBLE);
+                person3.setVisibility(View.INVISIBLE);
+                person4.setVisibility(View.INVISIBLE);
+
+                break;
+            case 4:
+                person1.setVisibility(View.INVISIBLE);
+                person2.setVisibility(View.INVISIBLE);
+                person3.setVisibility(View.VISIBLE);
+                person4.setVisibility(View.INVISIBLE);
+
+            break;
+
+
+
 
 
 
@@ -230,68 +289,22 @@ public class Fragment_main extends Fragment {
 
 
 
-
-    public void Participants(BoredAction boredAction) {
-
-
-
-        int a =1;
-        int b=2;
-        int c=3;
-        int d=4;
-
-        Random random=new Random();
-        int r=random.nextInt(boredAction.getParticipants()+a+b+c+d);
-
-
-        switch (r){
-            case 1:
-                person1.setVisibility(View.INVISIBLE);
-                person2.setVisibility(View.VISIBLE);
-                person3.setVisibility(View.VISIBLE);
-                person4.setVisibility(View.VISIBLE);
-
-
-                break;case 2:
-                person1.setVisibility(View.VISIBLE);
-                person2.setVisibility(View.INVISIBLE);
-                person3.setVisibility(View.VISIBLE);
-                person4.setVisibility(View.INVISIBLE);
-
-
-                break;case 3:
-                person1.setVisibility(View.VISIBLE);
-                person2.setVisibility(View.INVISIBLE);
-                person3.setVisibility(View.VISIBLE);
-                person4.setVisibility(View.VISIBLE);
-
-
-                break;case 4:
-                person1.setVisibility(View.VISIBLE);
-                person2.setVisibility(View.VISIBLE);
-                person3.setVisibility(View.VISIBLE);
-                person4.setVisibility(View.INVISIBLE);
-
-
-                break;
-
-
-
-
-
-
         }
 
 
-
-        }
-
+    }
 
 
 
 
 
-    public interface OnSelectedButtonListener {
+
+
+
+
+
+
+        public interface OnSelectedButtonListener {
 
         void onButtonSelected(int buttonIndex);
 
@@ -303,12 +316,18 @@ public class Fragment_main extends Fragment {
 
 
 
+
+
+
         animateShow();
 
         try {
 
 
-            App.boredApiClient.getAction(valueOfSpinner, null, null, null, null, null, null, null, new BoredApiClient.BoredActionCallback() {
+
+
+
+            App.boredApiClient.getAction(valueOfSpinner, null, null, null,null, null, null, null, new BoredApiClient.BoredActionCallback() {
                 @RequiresApi(api = Build.VERSION_CODES.N)
 
                 @Override
@@ -316,6 +335,12 @@ public class Fragment_main extends Fragment {
                     try {
                         animateDontShow();
                         changeColor();
+
+
+               linkFilter(boredAction);
+                        Participants(boredAction);
+
+
 
                         boredAction1 = boredAction;
                         keyHeart = boredAction.getKey();
@@ -326,7 +351,6 @@ public class Fragment_main extends Fragment {
 
                         progressBar.setProgress((int) (boredAction.getAccessibility() * 90), true);
 
-                        Participants(boredAction);
 
 
                         BoredAction boredAction3 = App.boredStorage.boredAction(keyHeart);
@@ -351,7 +375,7 @@ public class Fragment_main extends Fragment {
                 public void onFailure(Exception exception) {
                     if (exception == null) {
 
-                        Toast.makeText(getContext(), "данных нету", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "возможно что то отсутствует", Toast.LENGTH_LONG).show();
 
 
                     }
@@ -361,7 +385,7 @@ public class Fragment_main extends Fragment {
 
 
         } finally {
-            Toast.makeText(getContext(), "данных точно нету", Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "Что-то нету", Toast.LENGTH_LONG).show();
         }
 
 
@@ -411,7 +435,7 @@ public class Fragment_main extends Fragment {
         textAccess.setVisibility(View.VISIBLE);
         textPartic.setVisibility(View.VISIBLE);
         textFree.setVisibility(View.VISIBLE);
-
+        link.setVisibility(View.VISIBLE);
     }
 
     private void animateShow() {
@@ -430,6 +454,8 @@ public class Fragment_main extends Fragment {
             textAccess.setVisibility(View.INVISIBLE);
             textPartic.setVisibility(View.INVISIBLE);
             textFree.setVisibility(View.INVISIBLE);
+       link.setVisibility(View.INVISIBLE);
+
         }
 
 
@@ -443,15 +469,39 @@ public class Fragment_main extends Fragment {
 
     }*/
 
+    private void linkFilter(BoredAction boredAction) {
+        if (boredAction.getLink() != null) {
+            if (boredAction.getLink().equals("")) {
+                link.setVisibility(View.INVISIBLE);
+            } else {
+                link.setVisibility(View.VISIBLE);
+                QLink = boredAction.getLink();
+            }
+        }}
+
+
+    public void Link() {
+        try {
+
+      if(QLink==null){
+          Toast.makeText(getContext(), "Нажмите кнопку Next Прежде чем переходить по ссылке", Toast.LENGTH_LONG).show();
+
+
+      }
+
+      Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.addCategory(Intent.CATEGORY_BROWSABLE);
+
+            intent.setData(Uri.parse(QLink));
+            startActivity(intent);
+        }catch (Exception e){
 
 
 
 
-
-
-
-
-
+        }
+    }
 }
  /*  public static <T> void method(BoredAction boredAction) {
         accibilR.setOnChangeRangeListener(new SimpleRangeView.OnChangeRangeListener() {

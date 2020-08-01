@@ -14,7 +14,7 @@ import com.example.override_fivemonthn.model.BoredAction;
         exportSchema = false)
 
 public abstract class BoredDatabase extends RoomDatabase {
-    public  final static int VERSION = 2;
+    public  final static int VERSION = 4;
     public abstract BoredDao boredDao();
 
 

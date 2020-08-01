@@ -10,33 +10,64 @@
     tools:context=".Main.Fragment_main"
     tools:visibility="visible">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="310dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/change2"
-        android:nextFocusLeft="@drawable/change"
-        android:screenReaderFocusable="true"
-        android:src="@drawable/change1"
 
-        />
+
+
+
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="331dp"
-        android:layout_marginTop="23dp"
+   android:id="@+id/bateryChange"
+
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/change"
 
         />
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/statusLabel"
+        android:text="Charging"
+        android:textSize="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="300dp"
+  android:visibility="invisible"
+        >
+
+
+
+
+    </TextView>
+
+
+
+    <TextView
+        android:id="@+id/percentageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:text="49%"
+        android:textSize="10sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="323dp"
+
+
+        >
+
+    </TextView>
+
+
     <ImageView
-        android:layout_width="20dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="285dp"
-        android:layout_marginTop="13dp"
-        android:src="@drawable/wifi" />
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/wifi"
+
+        />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -49,16 +80,21 @@
         />
 
 
-    <TextView
-        android:layout_width="50dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:text="9:41"
-        android:textColor="@color/white"
-        android:textStyle="bold"
 
-        />
+    <TextClock
+        android:id="@+id/textClock2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+
+        android:layout_marginTop="7dp"
+        android:clickable="true"
+        android:format12Hour="hh:mm:ss"
+        android:format24Hour="hh:mm:ss"
+        android:text="TextClock"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -99,6 +135,20 @@ android:id="@+id/lottieHi"
     app:layout_constraintLeft_toLeftOf="parent"
 
     />
+
+        <Button
+            android:layout_width="wrap_content"
+
+           android:text="Click This link"
+            android:textSize="5dp"
+              android:textAllCaps="true"
+            android:id="@+id/Link"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+
+            android:layout_height="wrap_content" />
+
 
 
 
@@ -323,7 +373,7 @@ android:id="@+id/lottieHi"
         android:layout_height="20dp"
         android:layout_marginLeft="194dp"
         android:layout_marginTop="410dp"
-        android:text="Price"
+        android:text="@string/price"
 
        android:id="@+id/price"
         android:textColor="@color/white"

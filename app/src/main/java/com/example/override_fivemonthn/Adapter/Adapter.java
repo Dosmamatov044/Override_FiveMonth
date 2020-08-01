@@ -15,10 +15,14 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.override_fivemonthn.Main.Fragment_main;
 import com.example.override_fivemonthn.R;
 import com.example.override_fivemonthn.model.BoredAction;
+import com.google.gson.internal.$Gson$Preconditions;
 import com.like.LikeButton;
 
+
+import org.jetbrains.annotations.NotNull;
 
 import java.text.MessageFormat;
 import java.util.List;
@@ -102,68 +106,64 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
 
         @RequiresApi(api = Build.VERSION_CODES.N)
         public void Onbind(BoredAction boredAction) {
-            TextView free, Participants;
 
+            Participants(boredAction);
 
             textPrice.setText(MessageFormat.format("{0}", boredAction.getPrice().toString()));
             progressBar.setProgress((int) (boredAction.getAccessibility() * 90), true);
             explore_the.setText(boredAction.getActivity());
             textViewCategory.setText(boredAction.getType());
 
-Participants(boredAction);
+
+
         }
+        private void Participants(BoredAction boredAction) {
 
 
-        public void Participants(BoredAction boredAction) {
 
 
+            Random random=new Random();
+            int r=random.nextInt(boredAction.getParticipants()+1+2+3+4)+2;
 
-    int a =1;
-    int b=2;
-    int c=3;
-    int d=4;
+            if (boredAction.getParticipants() != null) {
 
-    Random random=new Random();
-    int r=random.nextInt(boredAction.getParticipants()+a+b+c+d);
+                switch (r){
+                    case 1:
+                        person1.setVisibility(View.INVISIBLE);
+                        person2.setVisibility(View.INVISIBLE);
+                        person3.setVisibility(View.VISIBLE);
+                        person4.setVisibility(View.INVISIBLE);
+                        break;
+                    case 2:
+                        person1.setVisibility(View.INVISIBLE);
+                        person2.setVisibility(View.INVISIBLE);
+                        person3.setVisibility(View.VISIBLE);
+                        person4.setVisibility(View.INVISIBLE);
 
+                        break;
+                    case 3:
+                        person1.setVisibility(View.INVISIBLE);
+                        person2.setVisibility(View.INVISIBLE);
+                        person3.setVisibility(View.INVISIBLE);
+                        person4.setVisibility(View.INVISIBLE);
 
-    switch (r){
-        case 1:
-            person1.setVisibility(View.INVISIBLE);
-            person2.setVisibility(View.VISIBLE);
-            person3.setVisibility(View.VISIBLE);
-            person4.setVisibility(View.VISIBLE);
+                        break;
+                    case 4:
+                        person1.setVisibility(View.INVISIBLE);
+                        person2.setVisibility(View.INVISIBLE);
+                        person3.setVisibility(View.VISIBLE);
+                        person4.setVisibility(View.INVISIBLE);
 
-
-            break;case 2:
-            person1.setVisibility(View.VISIBLE);
-            person2.setVisibility(View.INVISIBLE);
-            person3.setVisibility(View.VISIBLE);
-            person4.setVisibility(View.INVISIBLE);
-
-
-            break;case 3:
-            person1.setVisibility(View.VISIBLE);
-            person2.setVisibility(View.INVISIBLE);
-            person3.setVisibility(View.VISIBLE);
-            person4.setVisibility(View.VISIBLE);
-
-
-            break;case 4:
-            person1.setVisibility(View.VISIBLE);
-            person2.setVisibility(View.VISIBLE);
-            person3.setVisibility(View.VISIBLE);
-            person4.setVisibility(View.INVISIBLE);
-
-
-            break;
+                        break;
 
 
 
 
 
 
-    }
+                }
+
+            }
 
 
 
@@ -185,8 +185,8 @@ Participants(boredAction);
             }
 
 
-      */ }
-    }}
+      */ }}}
+
 
 
 

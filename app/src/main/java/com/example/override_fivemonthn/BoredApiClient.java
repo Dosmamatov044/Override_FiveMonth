@@ -1,5 +1,6 @@
 package com.example.override_fivemonthn;
 
+import android.content.IntentFilter;
 import android.util.Log;
 
 import com.example.override_fivemonthn.model.BoredAction;
@@ -39,8 +40,8 @@ public class BoredApiClient  {
                 '}';
     }
 
-    public  void  getAction(String type, Float minPrice, String Activity, String key, String participents, Float Maxprice, String link, Float accessibility, BoredActionCallback callback){
-        Call<BoredAction> call = client.getAction(type,minPrice,Activity,key,participents,Maxprice,link,accessibility);
+    public  void  getAction(String type, Float minPrice, String Activity, String key, Integer participants, Float Maxprice, String link, Float accessibility, BoredActionCallback callback){
+        Call<BoredAction> call = client.getAction(type,minPrice,Activity,key,participants,Maxprice,link,accessibility);
 
 
         Log.d("ololo", call.request().url().toString());
@@ -99,7 +100,7 @@ public class BoredApiClient  {
                 @Query("minprice")  Float minPrice,
                 @Query("activity")String activity,
                 @Query("key") String key,
-                @Query("participents") String participents,
+                @Query("participants") Integer participants,
                 @Query("price") Float Maxprice,
                 @Query("link")String link,
                 @Query("accessibility") Float accessibility);

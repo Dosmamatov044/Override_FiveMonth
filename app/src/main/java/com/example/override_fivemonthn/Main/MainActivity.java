@@ -3,6 +3,7 @@ package com.example.override_fivemonthn.Main;
 
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -27,6 +28,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.override_fivemonthn.Adapter.Adapter;
 import com.example.override_fivemonthn.Adapter.HeartFragment;
 
+import com.example.override_fivemonthn.BatteryReceiver;
 import com.example.override_fivemonthn.R;
 import com.example.override_fivemonthn.data.SharedPr;
 import com.example.override_fivemonthn.presentation.intro.IntroActivity;
@@ -43,14 +45,30 @@ SwitchCompat switchCompat;
     BottomNavigationView navigationView;
         private ViewPager viewPager;
 
-
+    private BatteryReceiver mBatteryReceiver=new BatteryReceiver();
+    private IntentFilter mIntentFilter=new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
 
      //   public static void start(Context context) {
    //         context.startActivity(new Intent(context, MainActivity.class));
    //     }
 
 
+    @Override
+    public void onPause() {
+       unregisterReceiver(mBatteryReceiver);
+        super.onPause();
 
+
+    }
+
+
+    @Override
+    public void onResume() {
+
+        super.onResume();
+registerReceiver(mBatteryReceiver,mIntentFilter);
+
+    }
 
     @Override
         protected void onCreate(Bundle savedInstanceState) {
