@@ -108,7 +108,7 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
         public void Onbind(BoredAction boredAction) {
 
             Participants(boredAction);
-
+            changeColor();
             textPrice.setText(MessageFormat.format("{0}", boredAction.getPrice().toString()));
             progressBar.setProgress((int) (boredAction.getAccessibility() * 90), true);
             explore_the.setText(boredAction.getActivity());
@@ -163,6 +163,9 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
 
                 }
 
+
+
+
             }
 
 
@@ -171,21 +174,41 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
 
 
 
+    }
 
-     /*       if (boredAction.getParticipants() != null) {
-                if (boredAction.getParticipants() == 1) {
-                    person1.setImageResource(R.drawable.groupv);
-            person2.setImageResource(R.drawable.group2);
+        private void changeColor() {
+            if (textViewCategory.getText().equals("education")) {
+                textViewCategory.setBackgroundResource(R.color.six);
 
-                } else if (boredAction.getParticipants() == 2) {
-                    person1.setImageResource(R.drawable.personplace);
-                } else if (boredAction.getParticipants() >= 3) {
-                    person1.setImageResource(R.drawable.groupv);
-                }
+
+            } else if (textViewCategory.getText().equals("diy")) {
+                textViewCategory.setBackgroundResource(R.color.five);
+
+
+            } else if (textViewCategory.getText().equals("social")) {
+                textViewCategory .setBackgroundResource(R.color.one);
+
+
+            } else if (textViewCategory.getText().equals("music")) {
+                textViewCategory.setBackgroundResource(R.color.two);
+            } else if (textViewCategory.getText().equals("charity")) {
+                textViewCategory.setBackgroundResource(R.color.three);
+            } else if (textViewCategory.getText().equals("cooking")) {
+                textViewCategory.setBackgroundResource(R.color.four);
+            } else if (textViewCategory.getText().equals("busywork")) {
+                textViewCategory.setBackgroundResource(R.color.eight);
+            } else if (textViewCategory.getText().equals("recreational")) {
+                textViewCategory.setBackgroundResource(R.color.seven);
+            } else if (textViewCategory.getText().equals("relaxation")) {
+                textViewCategory.setBackgroundResource(R.color.nine);
             }
 
+    }
 
-      */ }}}
+
+
+
+}}
 
 
 

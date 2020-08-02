@@ -9,7 +9,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatDelegate;
+
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -67,6 +67,9 @@ public class Fragment_main extends Fragment {
     TextView textFree, textPartic, textAccess;
     private String QLink;
     Button link;
+
+
+
 
     public static Fragment newInstance() {
         return new Fragment_main();
@@ -337,7 +340,7 @@ int r=random.nextInt(boredAction.getParticipants()+1+2+3+4)+2;
                         changeColor();
 
 
-               linkFilter(boredAction);
+               LinkFilter(boredAction);
                         Participants(boredAction);
 
 
@@ -469,7 +472,7 @@ int r=random.nextInt(boredAction.getParticipants()+1+2+3+4)+2;
 
     }*/
 
-    private void linkFilter(BoredAction boredAction) {
+    private void LinkFilter(BoredAction boredAction) {
         if (boredAction.getLink() != null) {
             if (boredAction.getLink().equals("")) {
                 link.setVisibility(View.INVISIBLE);
