@@ -68,7 +68,7 @@ public class Fragment_main extends Fragment {
     private String QLink;
     Button link;
 
-
+String all;
 
 
     public static Fragment newInstance() {
@@ -127,9 +127,12 @@ public class Fragment_main extends Fragment {
 
         slider1.setValues(0.0F, 5.0F);
 
-        spinner();
+
 
         addHeart();
+
+        spinnerSelect();
+
 
 
         link.setOnClickListener((View v13) -> {
@@ -158,16 +161,7 @@ public class Fragment_main extends Fragment {
    });*/
 
 
-        toNextTo.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View v) {
-
-                nextClick();
-
-            }
-        });
+        toNextTo.setOnClickListener(v -> nextClick());
 
 
     }
@@ -211,30 +205,30 @@ public class Fragment_main extends Fragment {
     }
 
 
-    private void spinner() {
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireContext(), R.array.types, R.layout.support_simple_spinner_dropdown_item);//CharSequense Parent String
-        spinner.setAdapter(adapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {   //
+    public void spinnerSelect() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                all = parent.getSelectedItem().toString();
 
 
-                changeColor();
-                valueOfSpinner = spinner.getSelectedItem().toString().trim();
-                textCategory.setText(valueOfSpinner);
+
+                    textCategory.setText(all);
+
 
 
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
-
             }
         });
+
+
     }
+
+
+
 
 
 
@@ -330,12 +324,19 @@ int r=random.nextInt(boredAction.getParticipants()+1+2+3+4)+2;
 
 
 
-            App.boredApiClient.getAction(valueOfSpinner, null, null, null,null, null, null, null, new BoredApiClient.BoredActionCallback() {
+            App.boredApiClient.getAction(all, null, null, null,null, null, null, null, new BoredApiClient.BoredActionCallback() {
                 @RequiresApi(api = Build.VERSION_CODES.N)
 
                 @Override
                 public void onSuccess(BoredAction boredAction) {
                     try {
+
+                        if (all!= null){
+                            if (all.equals("all")){
+                                all=null;}
+                        }
+
+
                         animateDontShow();
                         changeColor();
 
